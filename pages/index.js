@@ -11,7 +11,8 @@ import Credentials from '../components/Credentials4';
 import CompanyInsight from '../components/CompanyInsight';
 //import Contact from '../components/Contact';
 import Contact from '../components/ContactOptions';
-import Footer from '../components/Footer1';
+import Footer from '../components/Footer';
+//import Footer from '../components/Footer1';
 //import Footer from '../components/Footer2';
 //import Footer from '../components/Footer3';
 
@@ -29,7 +30,6 @@ export default function Home() {
         <Credentials />
         <CompanyInsight />
         <Contact />
-        <Footer />
       </main>
     </>
   );

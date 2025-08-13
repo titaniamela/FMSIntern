@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="order-2 lg:order-1 space-y-4 lg:space-y-6">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#1A5F7A] leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1A5F7A] leading-tight">
               Welcome to <br className="hidden sm:block" />
               Filard Musson System
             </h1>
@@ -34,6 +34,7 @@ export default function Hero() {
               Expert subsea cable survey teams delivering precision in placement
               and seamless integration for global marine engineering projects.
             </p>
+            {/* Button moved here */}
             <div className="pt-2">
               <button
                 onClick={handleLearnMoreClick}
@@ -52,12 +53,12 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-          <div className="order-1 lg:order-2">
-            <div className="relative max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="relative w-4/5 lg:w-full max-w-xs xl:max-w-sm mx-auto">
               <img
                 src="/images/home.jpeg"
                 alt="Underwater cables"
-                className="rounded-xl shadow-lg w-full h-auto object-cover max-h-64 sm:max-h-80 md:max-h-96 lg:max-h-[450px]"
+                className="rounded-xl shadow-lg w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-xl"></div>
             </div>

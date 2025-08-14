@@ -3,8 +3,8 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-[#E5F4FD] to-[#B8E0F5] text-[#046289] mt-0">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col items-center space-y-6">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex flex-col items-center space-y-3">
           {/* Social Media Icons */}
           <div className="flex space-x-6">
             {/* Instagram */}

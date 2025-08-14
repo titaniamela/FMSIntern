@@ -14,7 +14,7 @@ body {
 /* Smooth scroll untuk seluruh halaman */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 64px; /* Match navbar height (h-16 = 64px) */
 }
 
 /* Style untuk navbar */
@@ -22,4 +22,9 @@ nav.fixed {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Ensure sections take full viewport height and are properly spaced */
+section {
+  scroll-margin-top: 64px; /* Match navbar height */
 }

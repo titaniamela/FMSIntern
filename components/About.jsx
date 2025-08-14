@@ -5,7 +5,7 @@ export default function About() {
   const handleCompanyInsightClick = () => {
     const element = document.getElementById("company-insight");
     if (element) {
-      const navbarHeight = 80;
+      const navbarHeight = 64; // h-16 = 64px
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - navbarHeight;
@@ -20,8 +20,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen w-full bg-white relative overflow-hidden flex flex-col justify-start pb-16 px-4 md:px-20"
-      style={{ paddingTop: "100px" }}
+      className="min-h-screen w-full bg-white relative overflow-hidden flex flex-col justify-start pt-10 pb-16 px-4 md:px-20"
     >
       {/* Content container */}
       <div className="relative z-10 max-w-5xl mx-auto w-full">
@@ -67,7 +66,6 @@ export default function About() {
                        hover:bg-[#046289] hover:shadow-lg active:shadow-inner active:bg-[#1A5F7A]
                        text-sm cursor-pointer"
           >
-            {/* SVG icon */}
             <svg
               viewBox="0 0 24 24"
               width={20}

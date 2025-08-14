@@ -28,12 +28,12 @@ export default function ContactOptions() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Konten utama */}
+    <>
+      {/* Konten utama dengan tinggi yang dihitung tepat */}
       <section
         id="contact-options"
-        className="flex-1 w-full bg-white relative overflow-hidden flex flex-col justify-start pb-16 px-4 md:px-20"
-        style={{ paddingTop: "100px" }}
+        className="bg-white relative overflow-hidden flex items-center justify-center px-4 md:px-20"
+        style={{ height: "calc(100vh - 110px)" }}
       >
         <div className="relative z-10 max-w-5xl mx-auto w-full">
           <SectionTitle>Contact Us</SectionTitle>
@@ -106,8 +106,8 @@ export default function ContactOptions() {
         </div>
       </section>
 
-      {/* Footer di bawah */}
+      {/* Footer langsung tanpa container */}
       <Footer />
-    </div>
+    </>
   );
 }

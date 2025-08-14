@@ -23,17 +23,16 @@ export default function Services() {
   return (
     <section
       id="services2"
-      className="min-h-screen w-full bg-gradient-to-r from-[#E5F4FD] to-[#B8E0F5] relative overflow-hidden flex flex-col justify-start pb-16 px-4 md:px-20"
-      style={{ paddingTop: "100px" }}
+      className="min-h-screen w-full bg-gradient-to-r from-[#E5F4FD] to-[#B8E0F5] relative overflow-hidden flex flex-col justify-start pt-10 pb-16 px-4 md:px-20"
     >
       <div className="relative z-10 max-w-5xl mx-auto w-full">
         <SectionTitle>Our Services</SectionTitle>
 
-        <p className="text-center max-w-3xl mx-auto text-[#2E86AB] mb-10 text-base">
+        <p className="text-center max-w-3xl mx-auto text-[#2E86AB]  -mt-8 mb-6 text-base">
           Comprehensive Solutions for Subsea Projects
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((s, i) => (
             <div
               key={i}
@@ -48,7 +47,7 @@ export default function Services() {
                   <span className="inline-block w-3 h-3 rounded-full bg-[#B8E0F5]" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base mb-2 text-[#1A5F7A] leading-tight">
+                  <h3 className="font-bold text-sm mb-2 text-[#1A5F7A] leading-tight">
                     {s.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">

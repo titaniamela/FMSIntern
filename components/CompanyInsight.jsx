@@ -17,8 +17,7 @@ export default function CompanyInsight() {
   return (
     <section
       id="company-insight"
-      className="min-h-screen w-full bg-gradient-to-r from-[#E5F4FD] to-[#B8E0F5] relative overflow-hidden flex flex-col justify-start pb-16 px-4 md:px-20"
-      style={{ paddingTop: "100px" }}
+      className="min-h-screen w-full bg-gradient-to-r from-[#E5F4FD] to-[#B8E0F5] relative overflow-hidden flex flex-col justify-start pt-10 pb-16 px-4 md:px-20"
     >
       <div className="relative z-10 max-w-5xl mx-auto w-full">
         <SectionTitle>Company Insight</SectionTitle>

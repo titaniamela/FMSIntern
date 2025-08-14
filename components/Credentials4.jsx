@@ -33,10 +33,12 @@ export default function Credentials() {
           </h3>
         </div>
         <div className="absolute top-0 left-0 p-4 w-full h-full opacity-0 group-hover:opacity-100 bg-blue-50 overflow-y-auto transition-opacity text-xs text-[#2E86AB] rounded-xl">
-          <h3 className="text-sm font-semibold text-[#1A5F7A] mb-2">
+          <h3 className="text-2xl font-semibold text-center text-[#1A5F7A] mb-2">
             {heading}
           </h3>
-          {content && <p className="leading-tight">{content}</p>}
+          {content && (
+            <p className="text-sm text-justify leading-tight">{content}</p>
+          )}
           {points && (
             <ul className="list-disc list-inside text-left mt-1">
               {points.map((point, i) => (
@@ -54,8 +56,7 @@ export default function Credentials() {
   return (
     <section
       id="credentials4"
-      className="min-h-screen w-full bg-white relative overflow-hidden flex flex-col justify-start pb-16 px-4 md:px-20"
-      style={{ paddingTop: "100px" }}
+      className="min-h-screen w-full bg-white relative overflow-hidden flex flex-col justify-start pt-10 pb-16 px-4 md:px-20"
     >
       <div className="relative z-10 max-w-5xl mx-auto w-full">
         <SectionTitle>Our Credentials</SectionTitle>

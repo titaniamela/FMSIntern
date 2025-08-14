@@ -8,23 +8,27 @@ const Navbar = () => {
     { id: "home", label: "Home" },
     { id: "about", label: "About Us" },
     { id: "services2", label: "Services" },
-    { id: "credentials4", label: "Credentials" },
+    { id: "credentialcar", label: "Credentials" },
     { id: "contact-options", label: "Contact Us" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const navbarHeight = 80; // Increased offset for better spacing
+      const navbarHeight = 64; // Height of navbar (h-16 = 64px)
+      const offset = 100; // Additional offset to ensure proper section detection
 
       menuItems.forEach((item) => {
         const el = document.getElementById(item.id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          const top = rect.top + window.scrollY - navbarHeight;
-          const bottom = top + el.offsetHeight;
+          const elementTop = window.scrollY + rect.top;
+          const elementBottom = elementTop + el.offsetHeight;
 
-          // More precise detection with additional padding
-          if (window.scrollY >= top - 50 && window.scrollY < bottom - 50) {
+          // Check if we're within this section with proper offset
+          if (
+            window.scrollY >= elementTop - navbarHeight - offset &&
+            window.scrollY < elementBottom - navbarHeight - offset
+          ) {
             setActiveMenu(item.id);
           }
         }
@@ -44,7 +48,7 @@ const Navbar = () => {
     // Smooth scroll with proper offset
     const element = document.getElementById(itemId);
     if (element) {
-      const navbarHeight = 80;
+      const navbarHeight = 64; // h-16 = 64px
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - navbarHeight;
@@ -61,7 +65,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -110,7 +114,6 @@ const Navbar = () => {
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
-              {/* Hamburger icon */}
               <svg
                 className={`${isMenuOpen ? "hidden" : "block"} h-6 w-6`}
                 xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +129,6 @@ const Navbar = () => {
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
-              {/* Close icon */}
               <svg
                 className={`${isMenuOpen ? "block" : "hidden"} h-6 w-6`}
                 xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +151,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200 shadow-lg">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
           {menuItems.map((item) => (
             <a
               key={item.id}

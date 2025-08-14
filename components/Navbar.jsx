@@ -8,7 +8,7 @@ const Navbar = () => {
     { id: "home", label: "Home" },
     { id: "about", label: "About Us" },
     { id: "services2", label: "Services" },
-    { id: "credentialcar", label: "Credentials" },
+    { id: "credentials4", label: "Credentials" },
     { id: "contact-options", label: "Contact Us" },
   ];
 

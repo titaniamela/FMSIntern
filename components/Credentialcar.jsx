@@ -58,41 +58,40 @@ export default function Credentialcar() {
     const isCenter = position === "center";
     const isLeft = position === "left";
     const isRight = position === "right";
-    const isHidden = position === "hidden";
 
     return (
       <div
-        className={`absolute transition-all duration-500 ease-in-out cursor-pointer transform ${
-          isCenter
-            ? "z-30 scale-100 translate-x-0 opacity-100"
-            : isLeft
-              ? "z-20 -translate-x-24 scale-75 opacity-60 hover:scale-80"
-              : isRight
-                ? "z-20 translate-x-24 scale-75 opacity-60 hover:scale-80"
+        className={`absolute transition-all duration-500 ease-in-out cursor-pointer
+          ${
+            isCenter
+              ? "z-30 scale-100 opacity-100 hover:scale-105 hover:z-[50]"
+              : isLeft || isRight
+                ? "z-20 scale-75 opacity-60 hover:scale-80"
                 : "z-10 opacity-0 scale-75"
-        }`}
+          }
+        `}
         onClick={() => !isCenter && setActiveIndex(index)}
         style={{
           left: "50%",
           transform: `translateX(-50%) ${
             isCenter
-              ? "translateX(0) scale(1)"
+              ? "translateX(0)"
               : isLeft
-                ? "translateX(-120px) scale(0.75)"
+                ? "translateX(-120px)"
                 : isRight
-                  ? "translateX(120px) scale(0.75)"
-                  : "translateX(0) scale(0.75)"
+                  ? "translateX(120px)"
+                  : ""
           }`,
         }}
       >
-        <div className="group relative w-64 h-80 bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
+        <div className="group relative w-136 h-68 bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
           {/* Front Face */}
           <div
-            className={`absolute inset-0 flex flex-col justify-center items-center p-6 transition-transform duration-500 ${
-              isCenter ? "group-hover:-translate-y-full" : ""
-            }`}
+            className={`absolute inset-0 flex flex-col justify-center items-center p-6 transition-transform duration-500
+              ${isCenter ? "group-hover:-translate-y-full" : ""}
+            `}
           >
-            <div className="text-4xl mb-4 transform transition-transform group-hover:scale-110">
+            <div className="text-4xl mb-4 transition-transform group-hover:scale-110">
               {credential.icon}
             </div>
             <h3 className="text-xl font-bold text-[#1A5F7A] text-center leading-tight">
@@ -105,12 +104,9 @@ export default function Credentialcar() {
             )}
           </div>
 
-          {/* Back Face - Only for center card */}
+          {/* Back Face */}
           {isCenter && (
-            <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-6 bg-gradient-to-br from-[#1A5F7A] to-[#2E86AB] text-white overflow-y-auto">
-              <h3 className="text-xl font-bold mb-4 text-center text-white">
-                {credential.heading}
-              </h3>
+            <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 bg-gradient-to-br from-[#1A5F7A] to-[#2E86AB] text-white overflow-hidden flex flex-col justify-center items-center">
               {credential.content && (
                 <p className="text-sm text-justify leading-relaxed mb-4 text-blue-100">
                   {credential.content}
@@ -123,7 +119,9 @@ export default function Credentialcar() {
                       key={i}
                       className="flex items-start text-sm text-blue-100"
                     >
-                      <span className="text-yellow-300 mr-2 mt-1">•</span>
+                      <span className="text-yellow-300 mr-2 mt-1 text-3xl">
+                        •
+                      </span>
                       <span className="leading-relaxed">{point}</span>
                     </li>
                   ))}

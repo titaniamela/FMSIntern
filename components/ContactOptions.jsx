@@ -29,13 +29,13 @@ export default function ContactOptions() {
 
   return (
     <>
-      {/* Konten utama dengan tinggi yang dihitung tepat */}
+      {/* Konten utama dengan tinggi yang pas untuk satu halaman */}
       <section
         id="contact-options"
-        className="bg-white relative overflow-hidden flex items-center justify-center px-4 md:px-20"
-        style={{ height: "calc(100vh - 110px)" }}
+        className="bg-white relative overflow-hidden px-4 md:px-20 flex flex-col justify-center"
+        style={{ minHeight: "calc(100vh - 64px - 100px)" }}
       >
-        <div className="relative z-10 max-w-5xl mx-auto w-full">
+        <div className="relative z-10 max-w-5xl -mt-20 mx-auto w-full">
           <SectionTitle>Contact Us</SectionTitle>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">

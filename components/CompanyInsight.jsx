@@ -22,7 +22,7 @@ export default function CompanyInsight() {
       <div className="relative z-10 max-w-5xl mx-auto w-full">
         <SectionTitle>Company Insight</SectionTitle>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {images.map((item, idx) => (
             <div
               key={idx}
@@ -31,9 +31,9 @@ export default function CompanyInsight() {
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-full h-60 object-cover"
+                className="w-full h-70 object-cover"
               />
-              <div className="p-3">
+              <div className="p-5">
                 <p className="text-sm text-[#2E86AB] text-center">
                   {item.caption}
                 </p>
